@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+{% load static %}
+<head>
+    <style>
+        body{
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url(https://user-images.githubusercontent.com/2388823/107261098-bf287080-69f3-11eb-829c-d8884e26b758.png);
+  background-size: cover;
+  background-attachment: fixed;
+}
+#ti{
+    padding-top:20px;
+
+}
+.card{
+    margin-bottom:30px;
+    margin-left:30px;
+    margin-right:40px;
+}
+#edit{
+    border-radius:10px;
+    margin-left:16px;
+    width:80px;
+}
+#delete{
+    border-radius:10px;
+    width:80px;
+    margin-left:16px;
+}
+    </style>
+</head>
+<body>
+{% include 'header.html' %}
+
+<div class="container row mx-5" style="padding-top:50px;padding-left:50px;padding-right:40px;">
+    {% for i,j,k,l,m,n in mylist %}
+
+    <div class="col-lg-3">
+    <div class="card" style="width: 15rem;">
+        <img src="{% static i %}" style="height:150px; width:240px;" class="card-img-top" alt="...">
+       <div class="card-body">
+       <h5 class="card-title">{{j}}</h5>
+       <p class="card-text">{{l}}</p>
+        <p class="card-text">{{k}}</p>
+           <p class="card-text">{{m}}</p>
+           <div>
+                            <a href="http://127.0.0.1:8000/productedit/{{n}}" class="btn btn-success" id="edit">Edit</a>
+                            <a href="http://127.0.0.1:8000/productdelete/{{n}}" class="btn btn-danger" id="delete">Delete</a>
+                        </div>
+
+       </div>
+    </div>
+    </div>
+{% endfor %}
+</div>
+
+</body>
+</html>

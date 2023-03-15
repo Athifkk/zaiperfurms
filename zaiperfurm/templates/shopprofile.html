@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://kit.fontawesome.com/e1fd49b2cf.css" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/e1fd49b2cf.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+            background-image: url("https://media.istockphoto.com/id/1215814221/photo/the-black-and-silver-are-light-gray-with-white-the-gradient-is-the-surface-with-templates.jpg?s=612x612&w=0&k=20&c=n54PSneJzy5PjP9G8_QTtvOqczT7P5EKO5tLT4RAnHc=");
+            background-repeat:no-repeat;
+            background-size:1800px;
+        }
+    .container{
+      padding-bottom:50px;
+      padding-left:50px;
+    }
+    #g,#e,#f{
+        font-size:50px;
+        text-align:justify;
+        color:yellow;
+    }
+    #h,#i,#d{
+        padding-top:30px;
+<!--        background-color:#002080;-->
+        color:white;
+        margin-left:50px;
+        background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(14,174,87,1) 0%, rgba(12,116,117,1) 90% );
+        border-radius:50px
+}
+
+    #im{
+        background-size: cover;
+        background-attachment: fixed;
+}
+    }
+    #e:hover{
+        color:red;
+        font-size:60px;
+    }
+    #f:hover{
+        color: red;
+        font-size:60px;
+    }
+    #g:hover{
+        color: red;
+        font-size:60px;
+    }
+    .card-title{
+    color:white;
+    }
+  </style>
+</head>
+<body>
+
+    {% include 'header.html' %}
+    <form method="post">{% csrf_token %}
+    <div class="container-fluid">
+        <img src="https://images.unsplash.com/photo-1617351165959-471f874b60a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" style="height:500px;width:100%;" id="im">
+    </div>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg-4 col-sm-4 col-md-4">
+                <div class="card" id="h" style="width: 18rem;">
+                    <center><a href="http://127.0.0.1:8000/shopupload/"><i class="fa-solid fa-circle-arrow-up" id="g"></i></a></center>
+                    <div class="card-body">
+                      <center><h5 class="card-title">UPLOAD PRODUCT</h5></center>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-4 col-md-4">
+                <div class="card" id="i" style="width: 18rem;">
+                    <center><a href="http://127.0.0.1:8000/editprofile/{{id}}"><i class="fa-solid fa-user-pen" id="e"></i></a></center>
+                    <div class="card-body">
+                      <center><h5 class="card-title">EDIT PROFILE</h5></center>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-4 col-md-4">
+                <div class="card" id="d" style="width: 18rem;">
+                    <center><a href="http://127.0.0.1:8000/viewproduct/"><i class="fa-solid fa-eye" id="f"></i></a></center>
+                    <div class="card-body">
+                      <center><h5 class="card-title">VIEW PRODUCT</h5></center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   </form>
+</body>
+</html>

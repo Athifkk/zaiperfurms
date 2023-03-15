@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTER </title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a0f21795dc.js" crossorigin="anonymous"></script>
+
+    <style>
+
+
+        .m{
+            width: 100%;
+            height: 800px;
+            padding-top: 130px;
+
+        }
+        .input-group{
+            width: 65%;
+            margin-left: 7%;
+
+        }
+        .r{
+            padding-top: 20px;
+            padding-bottom: 10px;
+            width: 60%;
+            margin-left:300px;
+            border-radius:100px;
+            background:transparent;
+            background-color:rgba(41, 39, 39, 0.3);
+            box-shadow: 0 5px 20px black;
+            color:white;
+
+
+        }
+        h2{
+            text-align: center;
+            padding-bottom: 30px;
+
+        }
+        .col-3{
+            text-align: right;
+        }
+        .btn{
+            margin-left: 45%;
+            width: 20%;
+
+        }
+        body{
+            background-image: url("https://images.pexels.com/photos/916342/pexels-photo-916342.jpeg?auto=compress&cs=tinysrgb&w=600");
+            background-repeat:no-repeat;
+            background-size:100%;
+
+        }
+        #sbt{
+            border-radius:100px;
+            width:120px;
+            height:40px;
+            font-size:20px;
+            background-color:yellow;
+            color:black;
+        }
+        #sbt:hover{
+            background-color:black;
+            color:white;
+        }
+
+    </style>
+</head>
+{% include 'header.html' %}
+
+
+
+<form method="post" enctype="multipart/form-data"> {% csrf_token %}
+      <div class="m">
+        <div class="r ml-5">
+            <h2>SHOP EDIT PROFILE PAGE</h2>
+            <div class="input-group input-group-sm mb-3">
+                <div class="col-3"><label class="l mt-2"><strong>Username</strong></label></div>
+                <div class="col-1"></div>
+                <span class="input-group-text" id="basic-addon6"><i class="fa-solid fa-user"></i></span>
+                <input type="text" class="form-control" placeholder="Username" value="{{a.username}}" name="username" aria-label="username" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <div class="col-3"><label class="l mt-2"><strong>E-Mail</strong></label></div>
+                <div class="col-1"></div>
+                <span class="input-group-text" id="basic-addon2"><i class="fa-sharp fa-solid fa-envelope"></i></span>
+                <input type="email" class="form-control" value="{{a.email}}" placeholder="E-Mail Address" name="email" aria-label="email" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <div class="col-3"><label class="l mt-2"><strong>Shop Name</strong></label></div>
+                <div class="col-1"></div>
+                <span class="input-group-text" id="basic-addon3"><i class="fa-solid fa-store"></i></span>
+                <input type="text" class="form-control" value="sname" placeholder="Shop name" name="sname" aria-label="shop_name" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <div class="col-3"><label class="l mt-2"><strong>Owner Name</strong></label></div>
+                <div class="col-1"></div>
+                <span class="input-group-text" id="basic-addon4"><i class="fa-solid fa-user"></i></span>
+                <input type="text" class="form-control" value="oname" placeholder="Owner name" name="oname" aria-label="owner_name" aria-describedby="basic-addon1">
+            </div>
+
+            <div class="input-group input-group-sm mb-3">
+                <div class="col-3"><label class="l mt-2"><strong>Password</strong></label></div>
+                <div class="col-1"></div>
+                <span class="input-group-text" id="basic-addon5"><i class="fa-solid fa-user"></i></span>
+                <input type="password" class="form-control" placeholder="enter your password" name="password" aria-label="password" aria-describedby="basic-addon1">
+            </div>
+
+            <div class="input-group input-group-sm mb-3">
+                <div class="col-3"><label class="l mt-2"><strong> Confirm Password</strong></label></div>
+                <div class="col-1"></div>
+                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user"></i></span>
+                <input type="password" class="form-control" placeholder="confirm password" name="cpassword" aria-label="confirm_password" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <div class="col-3"><label class="l mt-2" ><strong>Profile Image</strong></label></div>
+                <div class="col-1"></div>
+                <input type="file" name="pimage">
+
+            </div>
+
+            <div class="input-group  input-group-sm mb-3">
+                <input type="submit" value="SAVE" id="sbt" class="btn  btn-lg" >
+<!--                <i class="fa-solid fa-paper-plane"></i>-->
+            </div>
+        </div>
+    </div>
+</form>
+
+
+</html>
